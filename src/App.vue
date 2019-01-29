@@ -1,3 +1,4 @@
+<!--
 <template>
   <div id="app">
     <div id="nav">
@@ -26,4 +27,20 @@
     }
   }
 }
+</style> -->
+
+<template>
+  <div id="app">
+    这是app.vue
+  </div>
+</template>
+<script>
+export default {
+
+}
+</script>
+<style lang="sass">
+
 </style>
+
+
