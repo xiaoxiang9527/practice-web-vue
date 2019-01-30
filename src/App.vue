@@ -1,8 +1,9 @@
 <template>
   <div id="app">
     <el-container>
-      <el-header>
+      <el-header height>
         <NavBar/>
+        <Home/>
       </el-header>
       <el-main>Main</el-main>
       <el-footer>Footer</el-footer>
@@ -12,18 +13,17 @@
 
 <script>
 import NavBar from './components/navbar'
+import Home from '@/views/home'
 export default {
   name: 'app',
   components:{
-    NavBar
+    NavBar,Home
   }
 }
 </script>
 
 <style>
-  .el-header, .el-footer {
-    background-color: #B3C0D1;
-  }
+ 
   .el-main {
     background-color: #E9EEF3;
   }
