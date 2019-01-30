@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <el-container>
-      <el-header>Header</el-header>
+      <el-header>
+        <NavBar/>
+      </el-header>
       <el-main>Main</el-main>
       <el-footer>Footer</el-footer>
   </el-container>
@@ -9,10 +11,12 @@
 </template>
 
 <script>
-
+import NavBar from './components/navbar'
 export default {
   name: 'app',
-
+  components:{
+    NavBar
+  }
 }
 </script>
 
