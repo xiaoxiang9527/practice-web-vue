@@ -8,19 +8,12 @@
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
 
- html {
-  line-height: 1.15; /* 1 */
-  -webkit-text-size-adjust: 100%; /* 2 */
-  font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
-}
-
 /* Sections
    ========================================================================== */
 
 /**
  * Remove the margin in all browsers.
  */
-
 body {
   margin: 0;
 }
