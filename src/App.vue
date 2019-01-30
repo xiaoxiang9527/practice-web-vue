@@ -19,13 +19,9 @@ export default {
 <style>
   .el-header, .el-footer {
     background-color: #B3C0D1;
-    color: #333;
-    text-align: center;
   }
   .el-main {
     background-color: #E9EEF3;
-    color: #333;
-    text-align: center;
   }
   
 </style>
