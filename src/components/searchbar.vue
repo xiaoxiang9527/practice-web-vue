@@ -24,8 +24,17 @@ export default {
 </script>
 
 <style scoped>
- .el-select .el-input {
-    width: 130px;
+div{
+  text-align: center;
+}
+  .el-select{
+    width: 110px;
   }
- 
+.el-input__inner{
+  width: auto;
+  padding: 0 !important
+}
+.el-input{
+  max-width: 550px;
+}
 </style>

@@ -3,9 +3,10 @@
     <el-container>
       <el-header height>
         <NavBar/>
-        <Home/>
       </el-header>
-      <el-main>Main</el-main>
+      <el-main> 
+        <Home/>
+      </el-main>
       <el-footer>Footer</el-footer>
   </el-container>
   </div>
@@ -25,7 +26,10 @@ export default {
 <style>
  
   .el-main {
-    background-color: #E9EEF3;
+    padding: 1rem 0 !important
+  }
+  .el-header{
+    padding: 0 0.5rem !important;
   }
   
 </style>

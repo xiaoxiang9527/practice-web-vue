@@ -1,28 +1,38 @@
 <template>
-<el-tabs v-model="activeName" @tab-click="handleClick">
-    <el-tab-pane label="用户管理" name="first"></el-tab-pane>
-    <el-tab-pane label="配置管理" name="second"></el-tab-pane>
-    <el-tab-pane label="角色管理" name="third"></el-tab-pane>
-    <el-tab-pane label="定时任务补偿" name="fourth"></el-tab-pane>
-</el-tabs>
+<el-menu
+  :default-active="activeIndex"
+  class="el-menu-demo"
+  mode="horizontal"
+  @select="handleSelect">
+  <el-menu-item index="1">处理中心</el-menu-item>
+  <el-menu-item index="2">消息中心</el-menu-item>
+  <el-menu-item index="3"><a href="https://www.ele.me" target="_blank">订单管理</a></el-menu-item>
+</el-menu>
 </template>
 
 <script>
 export default {
-  data() {
+    data() {
       return {
-        activeName: 'second'
+        activeIndex: '1',
       };
     },
     methods: {
-      handleClick(tab, event) {
-        console.log(tab, event);
+      handleSelect(key, keyPath) {
+        console.log(key, keyPath);
       }
     }
-}
+  }
 </script>
 
 <style scoped>
-
+.el-menu--horizontal>.el-menu-item{
+  height: 3rem !important;
+  line-height: 3rem ! important;
+}
+.el-menu--horizontal{
+  max-width: 1210px;
+  margin: 0 auto;
+}
 </style>
 
