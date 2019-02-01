@@ -1,10 +1,10 @@
 <template>
-<div>
+<div id="searchBar">
   <el-input placeholder="请输入内容" v-model="input" class="input-with-select">
     <el-select v-model="select" slot="prepend" placeholder="请选择">
-      <el-option label="餐厅名" value="1"></el-option>
-      <el-option label="订单号" value="2"></el-option>
-      <el-option label="用户电话" value="3"></el-option>
+      <el-option label="诗词查询" value="1"></el-option>
+      <el-option label="作者查询" value="2"></el-option>
+      <el-option label="模糊查询" value="3"></el-option>
     </el-select>
     <el-button slot="append" icon="el-icon-search"></el-button>
   </el-input>
@@ -24,7 +24,7 @@ export default {
 </script>
 
 <style scoped>
-div{
+#searchBar{
   text-align: center;
 }
   .el-select{
