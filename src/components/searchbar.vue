@@ -1,7 +1,7 @@
 <template>
 <div id="searchBar">
-  <el-input placeholder="请输入内容" v-model="input" class="input-with-select">
-    <el-select v-model="select" slot="prepend" placeholder="请选择">
+  <el-input placeholder="请输入内容" v-model="searchInput" class="input-with-select">
+    <el-select v-model="searchValue" slot="prepend" placeholder="请选择">
       <el-option label="诗词查询" value="1"></el-option>
       <el-option label="作者查询" value="2"></el-option>
       <el-option label="模糊查询" value="3"></el-option>
@@ -16,7 +16,24 @@ export default {
   data(){
     return{
       input:'',
-      select:''
+    }
+  },
+  computed:{
+    searchValue:{
+    get:function(){
+      return this.$store.state.searchValue
+    },
+    set:function(newValue){
+      this.$store.commit('changeSearch',newValue)
+    }
+    },
+    searchInput:{
+    get:function(){
+      return this.$store.state.searchInput
+    },
+    set:function(newValue){
+      this.$store.commit('changeSearchInput',newValue)
+    }
     }
   }
 }

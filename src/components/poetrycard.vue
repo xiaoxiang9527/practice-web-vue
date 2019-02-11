@@ -1,9 +1,10 @@
 <template>
-  <div class="cardContainer">
+  <div class="poetryCardContainer">
     <div class="boxHeader">
       <span>>>随机诗词推荐</span> <el-button type="text" class="switchPoem" @click="switchRandomPoem">点我换一首</el-button>
     </div>
-    <el-card class="box-card">
+    <transition name="fade" v-if="cardShow" mode="out-in" appear>
+      <el-card class="box-poetry-card">
       <div slot="header" class="clearfix cardHeader">
         <span class="cardTitle">{{title}}</span>
         <span class="cardDelimeter"></span>
@@ -13,16 +14,19 @@
         {{item }}
       </div>
     </el-card>
+    </transition>
   </div>
 </template>
 
 <script>
+import {recommendPoetry} from '@/apis'
 export default {
   mounted(){
    this.switchRandomPoem()
   },
   data(){
     return{
+      cardShow:false,
       title:'',
       author:'',
       content:[]
@@ -30,9 +34,10 @@ export default {
   },
   methods:{
     switchRandomPoem(){
-      this.$axios.get('https://api.apiopen.top/recommendPoetry').then(
+      this.cardShow=false
+      this.$axios.get(recommendPoetry).then(
       res=>{let r=res.data.result;this.title=r.title;this.author=r.authors;
-      this.content=r.content.split("|")}).catch(err=>{console.log(err)})
+      this.content=r.content.split("|");this.cardShow=true}).catch(err=>{console.log(err)})
     }
   }
 }
@@ -53,7 +58,7 @@ export default {
     clear: both
   }
 
-  .box-card, .cardContainer {
+  .box-poetry-card, .poetryCardContainer {
     width: 100%;
     max-width: 1210px;
     margin:0 auto;
@@ -86,4 +91,14 @@ export default {
     padding: 0 3px;
     float: right;
   }
+  .fade-enter-active, .fade-appear-active {
+    transition: width .3s;
+  }
+  .fade-leave-active{
+    transition:width 0;
+  }
+  .fade-enter, .fade-leave-to, .fade-appear {
+    width:0;
+  }
+
 </style>

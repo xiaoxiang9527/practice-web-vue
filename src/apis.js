@@ -1,0 +1,1 @@
+export const recommendPoetry="https://api.apiopen.top/recommendPoetry"
