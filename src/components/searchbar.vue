@@ -13,11 +13,6 @@
 
 <script>
 export default {
-  data(){
-    return{
-      input:'',
-    }
-  },
   computed:{
     searchValue:{
     get:function(){
@@ -34,6 +29,13 @@ export default {
     set:function(newValue){
       this.$store.commit('changeSearchInput',newValue)
     }
+    }
+  },
+  methods:{
+    triggerSearch(){
+      if(this.searchInput===""){
+        alert("请输入搜索内容")
+      }
     }
   }
 }

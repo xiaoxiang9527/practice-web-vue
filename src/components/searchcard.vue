@@ -1,27 +1,26 @@
 <template>
 <div class="searchCardContainer">
   <el-card class="search-box-card">
-    <div v-for="o in searchContent" :key="o">
-      {{'列表内容 ' + o }}
+    <div v-if="1" class="authorBox">
+     <div class="authorName">{{authorName}}</div>
+     <div class="authorDesc">{{authorDesc}}</div>
     </div>
   </el-card>
 </div>
 </template>
 
 <script>
+import { mapState } from 'vuex'
+import {authorSearch} from '@/apis'
 export default {
   mounted() {
-    this.searchPoetry()
+    this.$store.dispatch('search')
   },
-  data() {
-    return {
-      searchContent:["一","二","三","四"]
-    }
-  },
+  computed:mapState([
+    'authorName','authorDesc'
+  ]),
   methods: {
-    searchPoetry(){
-      this.$axios.get("http://api.apiopen.top/searchAuthors?name=李白").then(res=>{console.log(res.result)})
-    }
+
   }
 }
 </script>
@@ -31,5 +30,14 @@ export default {
   width: 100%;
   max-width: 1210px;
   margin:1rem auto 0 auto;
+}
+.authorName{
+  font-size: 1.2rem;
+  padding-bottom: .5rem;
+  text-align: center
+}
+.authorDesc{
+ text-align: center;
+ line-height: 1.8
 }
 </style>
