@@ -15,11 +15,13 @@ export default new Vuex.Store({
     authorName:"",
     authorDesc:"",
     poetryList:[],
-    loadingStatus:false
+    loadingStatus:false,
+    cardShow:false
   },
   mutations: {
     startLoading(state){
       state.loadingStatus=true
+      state.cardShow=true
     },
     stopLoading(state){
       state.loadingStatus=false
@@ -43,12 +45,11 @@ export default new Vuex.Store({
       state.authorDesc=""
       state.poetryList=[]
       state.loadingStatus=false
+      state.cardShow=false
+      state.searchInput=""
     },
     homeHide(state){
       state.homeShow=false
-    },
-    homeShow(state){
-      state.homeShow=true
     }
   },
   actions: {

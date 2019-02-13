@@ -1,4 +1,5 @@
 <template>
+<transition name="fade1" v-if="cardShow" mode="out-in" appear>
 <div class="searchCardContainer">
   <el-card class="search-box-card">
     <Loading v-if="loadingStatus" />
@@ -27,6 +28,7 @@
     </div>
   </el-card>
 </div>
+</transition>
 </template>
 
 <script>
@@ -50,6 +52,7 @@ export default {
     poetryList:state=>state.poetryList,
     totalNum:state=>state.poetryList.length,
     loadingStatus:state=>state.loadingStatus,
+    cardShow:state=>state.cardShow,
 
     poetry(state){
       if(this.poetryList.length<=8){
@@ -123,4 +126,14 @@ export default {
  .pagination{
    white-space: normal !important
  }
+  .fade1-enter-active, .fade1-appear-active {
+    transition: width .3s;
+  }
+  .fade1-leave-active{
+    transition:width 0;
+  }
+  .fade1-enter, .fade1-leave-to, .fade1-appear {
+    width:0;
+  }
+
 </style>

@@ -1,9 +1,9 @@
 <template>
 <div>
   <SearchBar/>
-  <Carousel v-if="homeShow" />
-  <PoetryCard v-if="homeShow" />
   <SearchCard v-if="!homeShow"/>
+  <Carousel/>
+  <PoetryCard />
 </div>
 </template>
 
