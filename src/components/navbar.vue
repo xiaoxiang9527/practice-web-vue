@@ -4,7 +4,7 @@
   class="el-menu-demo"
   mode="horizontal"
   @select="handleSelect">
-  <el-menu-item index="1">主页</el-menu-item>
+  <el-menu-item index="1" @click="toMain">主页</el-menu-item>
   <el-menu-item index="2">挑战</el-menu-item>
   <el-menu-item index="3"><a href="#" target="_blank">登陆</a></el-menu-item>
 </el-menu>
@@ -18,6 +18,9 @@ export default {
       };
     },
     methods: {
+      toMain(){
+        this.$store.commit('homeShow')
+      },
       handleSelect(key, keyPath) {
         console.log(key, keyPath);
       }

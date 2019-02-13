@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import { Button,Container,Header,Main,Footer,MenuItem,
-  Carousel,CarouselItem,Menu,Select,Input,Option,Card} from 'element-ui'
+  Carousel,CarouselItem,Menu,Select,Input,Option,Card,Pagination} from 'element-ui'
 
 Vue.use(Button)
 Vue.use(Container)
@@ -15,3 +15,4 @@ Vue.use(Option)
 Vue.use(Carousel)
 Vue.use(CarouselItem)
 Vue.use(Card)
+Vue.use(Pagination)
