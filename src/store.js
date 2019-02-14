@@ -16,9 +16,20 @@ export default new Vuex.Store({
     authorDesc:"",
     poetryList:[],
     loadingStatus:false,
-    cardShow:false
+    cardShow:false,
+    loggedIn:false,
+    activeIndex:""
   },
   mutations: {
+    changeActiveIndex(state,val){
+      state.activeIndex=val
+    },
+    logIn(state){
+      state.loggedIn=true
+    },
+    logOut(state){
+      state.loggedIn=false
+    },
     startLoading(state){
       state.loadingStatus=true
       state.cardShow=true

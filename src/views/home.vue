@@ -8,18 +8,21 @@
 </template>
 
 <script>
-import SearchBar from '@/components/searchbar'
-import Carousel from '@/components/carousel'
-import PoetryCard from '@/components/poetrycard'
-import SearchCard from '@/components/searchcard'
+
 export default {
+mounted(){
+  this.$store.commit('changeActiveIndex',"1")
+},
 computed:{
   homeShow(){
     return this.$store.state.homeShow
   }
 },
 components:{
-  SearchBar,Carousel,PoetryCard,SearchCard
+  'SearchBar':()=>import('@/components/searchbar'),
+  'Carousel':()=>import('@/components/carousel'),
+  'PoetryCard':()=>import('@/components/poetrycard'),
+  'SearchCard':()=>import('@/components/searchcard')
 }
 }
 </script>

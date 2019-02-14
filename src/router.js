@@ -4,7 +4,23 @@ import Router from 'vue-router'
 Vue.use(Router)
 
 export default new Router({
+  mode:"history",
   routes: [
+    {
+      path: '/exam',
+      name: 'exam',
+      component: ()=>import('@/views/exam')
+    },
+    {
+      path: '/',
+      name: 'home',
+      component:()=>import('@/views/home')
+    },
+    {
+      path: '*',
+      name: 'errorpage',
+      component: ()=>import('@/views/errorpage')
+    }
     // {
     //   path: '/',
     //   name: 'home',

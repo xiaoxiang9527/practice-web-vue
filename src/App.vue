@@ -5,9 +5,9 @@
         <NavBar/>
       </el-header>
       <el-main> 
-        <Home/>
+        <router-view></router-view>
       </el-main>
-      <el-footer height="80px">
+      <el-footer height="100px">
         <div id="footerImgContainer">
         <img src="@/assets/footer.jpg" alt="此处有词一句">
         </div>
@@ -18,11 +18,10 @@
 
 <script>
 import NavBar from './components/navbar'
-import Home from '@/views/home'
 export default {
   name: 'app',
   components:{
-    NavBar,Home
+    NavBar
   }
 }
 </script>
