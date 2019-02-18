@@ -3,8 +3,8 @@
   :default-active="this.$store.state.activeIndex"
   mode="horizontal">
   <el-menu-item index="1"><router-link to="/" class="link">主页</router-link></el-menu-item>
-  <el-menu-item index="2"><router-link to="/exam" class="link">挑战</router-link></el-menu-item>
-  <el-button v-if="this.$store.state.loggedIn===true"  type="info" plain size="small" round class="logout" @click="logOut">退出登陆</el-button>
+  <el-menu-item index="2" @click="reloadExam"><router-link to="/exam" class="link">挑战</router-link></el-menu-item>
+  <el-button v-show="this.$store.state.loggedIn===true"  type="info" plain size="small" round class="logout" @click="logOut">退出登陆</el-button>
 </el-menu>
 </template>
 
@@ -25,6 +25,9 @@ export default {
       setTimeout(()=>{this.$store.commit('logOut')
       Cookies.remove(site)
       },300)
+    },
+    reloadExam(){
+      this.$store.commit('examNotStart')
     }
   }
   }

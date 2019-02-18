@@ -18,9 +18,50 @@ export default new Vuex.Store({
     loadingStatus:false,
     cardShow:false,
     loggedIn:false,
-    activeIndex:""
+    activeIndex:"",
+    examStart:false,
+    juZitotalNum:0,
+    countNum:10,
+    counting:false,
+    rightNum:0,
+    resultShow:false
   },
   mutations: {
+    changeResultShow(state,val){
+      state.resultShow=val
+    },
+    increaseRightNum(state){
+      state.rightNum++
+    },
+    resetRightNum(state){
+      state.rightNum=0
+    },
+    countDown(state){
+      if (state.countNum>=1){
+      state.countNum--}
+      else{
+        state.counting=false
+      }
+    },
+    changeCountShow(state,val){
+      state.countShow=val
+    },
+    startCounting(state){
+      state.counting=true
+    },
+    stopCounting(state){
+      state.counting=false
+    },
+    resetCountNum(state){
+      state.counting=false
+      state.countNum=10
+    },
+    examNotStart(state){
+      state.examStart=false
+    },
+    startExam(state){
+      state.examStart=true
+    },
     changeActiveIndex(state,val){
       state.activeIndex=val
     },
@@ -61,6 +102,9 @@ export default new Vuex.Store({
     },
     homeHide(state){
       state.homeShow=false
+    },
+    homeShow(state){
+      state.homeShow=true
     }
   },
   actions: {

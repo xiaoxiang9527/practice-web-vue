@@ -1,5 +1,5 @@
 <template>
-  <el-form :model="ruleForm2" status-icon :rules="rules2" ref="ruleForm2" label-width="3rem" class="demo-ruleForm">
+  <el-form :model="ruleForm2" status-icon :rules="rules2" ref="ruleForm2" label-width="3rem">
     <div class="note">请使用如下测试账号登陆:</div>
     <div class="note">账号:xiao</div>
     <div class="note">密码:xiang</div>
@@ -41,13 +41,13 @@ data() {
           } else {
             callback()
           }
-        }, 600);
+        }, 500);
         }
       };
       var validatePass = (rule, value, callback) => {
         if (value === '') {
-          callback(new Error('请输入密码'));
-        } else {
+        callback(new Error('请输入密码'));
+      } else {
           if (value !== 'xiang') {
             callback(new Error('密码错误'));
           } else {
@@ -78,6 +78,7 @@ data() {
         setTimeout(()=>{
           if (this.ruleForm2.account==='xiao' && this.ruleForm2.pass==='xiang' ){
           this.$store.commit('logIn')
+          this.$store.commit('examNotStart')
           Cookies.set(site,`${this.ruleForm2.account}:${this.ruleForm2.pass}`,{ expires: 7 })
         }
         else{

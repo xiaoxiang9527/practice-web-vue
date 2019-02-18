@@ -12,6 +12,7 @@
 export default {
 mounted(){
   this.$store.commit('changeActiveIndex',"1")
+  this.$store.commit('homeShow')
 },
 computed:{
   homeShow(){
