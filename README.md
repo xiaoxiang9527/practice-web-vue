@@ -1,4 +1,4 @@
-Demo: http://http://shi-xiaoxiang.netlify.com/
+Demo: http://shi-xiaoxiang.netlify.com/
 
 ## Project setup
 ```
