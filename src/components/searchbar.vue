@@ -1,6 +1,6 @@
 <template>
 <div id="searchBar">
-  <el-input placeholder="请输入查询内容" v-model="searchInput" class="input-with-select">
+  <el-input placeholder="输入李白试试?" v-model="searchInput" class="input-with-select">
     <el-select v-model="searchValue" slot="prepend" placeholder="请选择" @change="clearAll" :disabled="$store.state.loadingStatus">
       <el-option label="诗名查询" value="1"></el-option>
       <el-option label="作者查询" value="2"></el-option>
