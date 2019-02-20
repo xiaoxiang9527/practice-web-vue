@@ -152,7 +152,8 @@ methods:{
 .beforeExam{
   width: 100%;
   max-width: 1210px;
-  text-align: center
+  text-align: center;
+  margin:auto
 }
 .examArea{
   font-size: 1.2rem;
