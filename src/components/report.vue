@@ -29,6 +29,7 @@ methods:{
   width: 100%;
   max-width: 1210px;
   text-align: center;
-  margin-top: .8rem
+  margin-top: .8rem;
+  margin: auto
 }
 </style>
